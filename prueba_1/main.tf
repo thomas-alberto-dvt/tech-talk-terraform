@@ -28,7 +28,7 @@ resource "google_compute_instance" "demo_vm" {
       type  = "pd-standard"
     }
   }
-  
+
   network_interface {
     network = "default"
   }
@@ -42,6 +42,11 @@ resource "google_sql_database_instance" "demo_db" {
   
   settings {
     tier = each.value.tier
+  }
+
+  labels = {
+    environment = "dev"
+    service     = "demo-database"
   }
 }
 
