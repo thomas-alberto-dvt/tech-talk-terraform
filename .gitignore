@@ -36,8 +36,16 @@ plan.json
 # Infracost files
 infracost.json
 infracost-*.json
-infracost-report.html
+*.html
 .infracost/
+
+# Temporary files
+*.md
+!README.md
+!GUION_INFRACOST.md
+*.json
+!package*.json
+!tsconfig*.json
 
 # IDE
 .idea/
