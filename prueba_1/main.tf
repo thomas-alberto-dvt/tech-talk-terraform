@@ -32,6 +32,11 @@ resource "google_compute_instance" "demo_vm" {
   network_interface {
     network = "default"
   }
+
+  labels = {
+    environment = "dev"
+    service     = "demo-compute"
+  }
 }
 
 resource "google_sql_database_instance" "demo_db" {
@@ -42,10 +47,20 @@ resource "google_sql_database_instance" "demo_db" {
   
   settings {
     tier = each.value.tier
+    
+    user_labels = {
+      environment = "dev"
+      service     = "demo-database"
+    }
   }
 }
 
 resource "google_compute_address" "static_ip" {
-  name = "demo-static-ip"
+  name   = "demo-static-ip"
   region = var.region
+
+  labels = {
+    environment = "dev"
+    service     = "demo-network"
+  }
 }

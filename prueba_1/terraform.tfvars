@@ -8,7 +8,7 @@ disk_size_gb   = 50
 sql_instances = {
   "demo-mysql" = {
     database_version = "MYSQL_8_0"
-    tier            = "db-f1-micro"
+    tier            = "db-g1-small"
   }
   "demo-postgres" = {
     database_version = "POSTGRES_15"
