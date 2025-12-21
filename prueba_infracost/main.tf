@@ -1,6 +1,6 @@
 terraform {
   required_version = ">= 1.0"
-  
+
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -28,7 +28,7 @@ resource "google_compute_instance" "demo_vm" {
       type  = "pd-standard"
     }
   }
-  
+
   network_interface {
     network = "default"
   }
@@ -39,7 +39,7 @@ resource "google_sql_database_instance" "demo_db" {
   name             = each.key
   database_version = each.value.database_version
   region           = var.region
-  
+
   settings {
     tier = each.value.tier
   }

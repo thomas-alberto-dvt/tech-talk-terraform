@@ -98,14 +98,14 @@ infracost breakdown --path=.
 ```
 Project: prueba_1
 
- Name                                                   Monthly Qty  Unit     Monthly Cost   
-                                                                                             
- google_compute_instance.demo_vm["e2-standard-4"]                                           
- ├─ Instance usage (on-demand, e2-standard-4)                730  hours          $97.84   
- └─ Standard provisioned storage (pd-standard)                50  GB              $2.00   
-                                                                                             
- google_sql_database_instance.demo_db["demo-mysql"]                                         
- └─ SQL instance (db-g1-small, zonal)                        730  hours          $23.00   
+ Name                                                   Monthly Qty  Unit     Monthly Cost
+
+ google_compute_instance.demo_vm["e2-standard-4"]
+ ├─ Instance usage (on-demand, e2-standard-4)                730  hours          $97.84
+ └─ Standard provisioned storage (pd-standard)                50  GB              $2.00
+
+ google_sql_database_instance.demo_db["demo-mysql"]
+ └─ SQL instance (db-g1-small, zonal)                        730  hours          $23.00
 
  OVERALL TOTAL                                                                    $551.30
 ```
@@ -312,10 +312,10 @@ Missing mandatory tag: Service
 ```hcl
 resource "google_sql_database_instance" "demo_db" {
   # ... configuración ...
-  
+
   settings {
     tier = "db-g1-small"
-    
+
     user_labels = {
       environment = "dev"
       service     = "demo-database"
@@ -397,7 +397,7 @@ infracost diff --path=b.json --compare-to=a.json
 # .github/workflows/infracost.yml
 - name: Run Infracost
   run: infracost breakdown --path=.
-  
+
 - name: Check cost threshold
   run: |
     COST=$(infracost breakdown --path=. --format=json | jq '.totalMonthlyCost')

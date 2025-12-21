@@ -27,6 +27,6 @@ variable "sql_instances" {
   description = "Map of Cloud SQL instances to create"
   type = map(object({
     database_version = string
-    tier            = string
+    tier             = string
   }))
 }
