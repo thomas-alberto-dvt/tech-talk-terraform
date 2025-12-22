@@ -25,7 +25,7 @@ resource "google_compute_instance" "demo_vm" {
     initialize_params {
       image = "debian-cloud/debian-11"
       size  = var.disk_size_gb
-      type  = "pd-standard"
+      type  = "pd-balanced"
     }
   }
 
