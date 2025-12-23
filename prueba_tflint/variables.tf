@@ -14,13 +14,12 @@ variable "zone" {
 }
 
 variable "machine_type" {
-  description = "Compute Engine machine type"
   type        = list(string)
 }
 
 # ⚠️ Variables declaradas pero NO utilizadas
 variable "unused_variable" {
-  description = "Esta variable nunca se usa en el código"
+  description = "value"
   type        = string
   default     = "not-used"
 }
