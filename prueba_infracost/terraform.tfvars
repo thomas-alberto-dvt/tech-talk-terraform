@@ -2,7 +2,7 @@ project_id = "thomas-alberto-sandbox1"
 region     = "us-central1"
 zone       = "us-central1-a"
 
-machine_type = ["n1-standard-8"]
+machine_type = ["n1-standard-8", "e2-medium", "n2-standard-4"]
 disk_size_gb = 50
 
 sql_instances = {
