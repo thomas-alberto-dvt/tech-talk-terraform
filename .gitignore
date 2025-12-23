@@ -36,8 +36,10 @@ plan.json
 # Infracost files
 infracost.json
 infracost-*.json
+**/infracost*.json
 *.html
-.infracost/
+**/.infracost/
+.infracost-breakdown.json
 
 # Temporary files
 *.md
